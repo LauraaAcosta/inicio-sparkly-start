@@ -17,10 +17,10 @@ const ActionCard = ({ icon: Icon, title, onClick, className }: ActionCardProps) 
         className
       )}
     >
-      <div className="w-48 h-48 rounded-full bg-secondary border-4 border-foreground/80 flex items-center justify-center shadow-lg">
-        <Icon className="w-24 h-24 text-accent" strokeWidth={2.5} />
+      <div className="w-32 h-32 rounded-full bg-secondary border-4 border-foreground/80 flex items-center justify-center shadow-lg">
+        <Icon className="w-16 h-16 text-accent" strokeWidth={2.5} />
       </div>
-      <h3 className="text-2xl font-bold text-accent">{title}</h3>
+      <h3 className="text-xl font-bold text-accent">{title}</h3>
     </button>
   );
 };
