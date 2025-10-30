@@ -2,14 +2,19 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Calendar, Heart, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-const DonationDialog = ({ open, onOpenChange }) => {
+interface DonationDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const DonationDialog = ({ open, onOpenChange }: DonationDialogProps) => {
   // Datos de ejemplo - en una app real vendrían de una base de datos
   const lastDonation = new Date("2024-08-15");
   const nextDonation = new Date("2024-12-15");
   const peopleHelped = 18; // 3 personas por cada donación × 6 donaciones
   const totalDonations = 6;
 
-  const formatDate = (date) => {
+  const formatDate = (date: Date) => {
     return date.toLocaleDateString("es-ES", {
       day: "numeric",
       month: "long",
