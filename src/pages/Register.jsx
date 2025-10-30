@@ -59,21 +59,23 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-6">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-4">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5 flex items-center justify-center p-4">
+      <Card className="w-full max-w-lg shadow-lg border-accent/20 backdrop-blur">
+        <CardHeader className="space-y-3 pb-4">
           <div className="flex justify-center">
-            <Heart className="w-16 h-16 text-accent fill-accent" />
+            <div className="bg-accent/10 p-3 rounded-full">
+              <Heart className="w-12 h-12 text-accent fill-accent" />
+            </div>
           </div>
-          <CardTitle className="text-3xl text-center text-accent">
+          <CardTitle className="text-2xl text-center text-accent">
             Hemo<span className="text-primary">App</span>
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-center text-sm">
             Crea tu cuenta
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <CardContent className="pt-4">
+          <form onSubmit={handleSubmit} className="space-y-3">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <Input
@@ -119,26 +121,27 @@ const Register = () => {
             </div>
 
             <div className="space-y-2">
-              <Label>Rol</Label>
+              <Label className="text-sm">Rol</Label>
               <RadioGroup
                 value={formData.role}
                 onValueChange={(value) => setFormData({ ...formData, role: value })}
+                className="flex gap-4"
               >
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 bg-accent/5 px-4 py-2 rounded-lg border border-accent/20">
                   <RadioGroupItem value="donante" id="donante" />
-                  <Label htmlFor="donante" className="cursor-pointer">
+                  <Label htmlFor="donante" className="cursor-pointer text-sm">
                     Donante
                   </Label>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 bg-accent/5 px-4 py-2 rounded-lg border border-accent/20">
                   <RadioGroupItem value="paciente" id="paciente" />
-                  <Label htmlFor="paciente" className="cursor-pointer">
+                  <Label htmlFor="paciente" className="cursor-pointer text-sm">
                     Paciente
                   </Label>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 bg-accent/5 px-4 py-2 rounded-lg border border-accent/20">
                   <RadioGroupItem value="institucion" id="institucion" />
-                  <Label htmlFor="institucion" className="cursor-pointer">
+                  <Label htmlFor="institucion" className="cursor-pointer text-sm">
                     Institución
                   </Label>
                 </div>

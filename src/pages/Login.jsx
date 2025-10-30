@@ -33,16 +33,18 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-6">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-4">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5 flex items-center justify-center p-4">
+      <Card className="w-full max-w-md shadow-lg border-accent/20 backdrop-blur">
+        <CardHeader className="space-y-3 pb-4">
           <div className="flex justify-center">
-            <Heart className="w-16 h-16 text-accent fill-accent" />
+            <div className="bg-accent/10 p-3 rounded-full">
+              <Heart className="w-12 h-12 text-accent fill-accent" />
+            </div>
           </div>
-          <CardTitle className="text-3xl text-center text-accent">
+          <CardTitle className="text-2xl text-center text-accent">
             Hemo<span className="text-primary">App</span>
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-center text-sm">
             Inicia sesión en tu cuenta
           </CardDescription>
         </CardHeader>
