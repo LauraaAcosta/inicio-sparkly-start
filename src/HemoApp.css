@@ -4,11 +4,12 @@
 
 :root {
   /* Colores principales */
-  --hemo-brand: #dc143c;        /* Rojo principal (crimson) */
-  --hemo-accent: #ff6b6b;       /* Rojo accent */
+  --hemo-brand: #8B1538;        /* Burgundy oscuro del header */
+  --hemo-accent: #E5426C;       /* Rosa/rojo accent */
   --hemo-secondary: #f8f9fa;    /* Gris claro */
   --hemo-dark: #2c3e50;         /* Azul oscuro */
   --hemo-light: #ecf0f1;        /* Gris muy claro */
+  --hemo-bg-light: #FFE5ED;     /* Rosa claro del fondo */
   
   /* Colores de estado (para el mapa) */
   --stock-complete: #28a745;    /* Verde - Stock completo */
@@ -47,7 +48,7 @@ body {
    =============================================== */
 
 .hemo-header {
-  background: linear-gradient(135deg, var(--hemo-brand) 0%, #a51129 100%);
+  background: var(--hemo-brand);
   color: white;
   padding: var(--spacing-md) 0;
   box-shadow: var(--box-shadow);
@@ -59,6 +60,12 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.hemo-header .logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .hemo-header .brand i {
@@ -75,16 +82,79 @@ body {
   border-color: white;
 }
 
+.hemo-inicio-btn {
+  background-color: var(--hemo-accent);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-weight: 600;
+}
+
+.hemo-inicio-btn:hover {
+  background-color: #ff6b89;
+  color: white;
+}
+
 /* ===============================================
-   WELCOME TEXT (Landing Page)
+   LANDING PAGE
    =============================================== */
 
+.landing-page {
+  background: var(--hemo-bg-light);
+  min-height: 100vh;
+}
+
 .welcome-text {
-  color: var(--hemo-brand);
-  font-size: 2rem;
+  color: var(--hemo-accent);
+  font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
   margin: var(--spacing-lg) 0;
+}
+
+.feature-card-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.feature-card-new:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  color: var(--hemo-accent);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.info-section {
+  text-align: center;
+}
+
+.info-title {
+  color: var(--hemo-accent);
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.info-icon-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
 }
 
 /* ===============================================

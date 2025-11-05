@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './HemoApp.css';
+import logo from './assets/logo.png';
+import botonDonar from './assets/boton-donar.png';
+import botonMapa from './assets/boton-mapa.png';
+import botonEstado from './assets/boton-estado.png';
+import icono1 from './assets/icono-1.png';
+import icono2 from './assets/icono-2.png';
+import icono3 from './assets/icono-3.png';
+import icono4 from './assets/icono-4.png';
 
 // ===============================================
 // COMPONENTE PRINCIPAL APP
@@ -31,7 +39,7 @@ export default function App() {
       <div className="container">
         <nav className="d-flex justify-content-between align-items-center">
           <div className="brand">
-            <i className="fas fa-heart"></i>
+            <img src={logo} alt="HemoApp" className="logo-img" />
             <span>HemoApp</span>
           </div>
           <div className="d-flex gap-3 align-items-center">
@@ -45,15 +53,13 @@ export default function App() {
               className="btn btn-link text-white text-decoration-none"
               onClick={() => MapsTo('profile')}
             >
-              <i className="fas fa-user me-2"></i>
               Mi Perfil
             </button>
             <button 
-              className="btn btn-outline-light"
-              onClick={() => MapsTo('login')}
+              className="btn hemo-inicio-btn"
+              onClick={() => MapsTo('home')}
             >
-              <i className="fas fa-sign-out-alt me-2"></i>
-              Salir
+              Inicio
             </button>
           </div>
         </nav>
@@ -65,47 +71,51 @@ export default function App() {
   // COMPONENTE FEATURECARDS (Landing Page)
   // ===============================================
   const FeatureCards = () => (
-    <div>
+    <div className="landing-page">
       <Header />
       <div className="container py-5">
         <h1 className="welcome-text">¿Qué quieres ver hoy?</h1>
         
         <div className="row justify-content-center mt-5">
-          <div className="col-md-4 mb-4">
-            <div className="feature-card" onClick={() => MapsTo('donacion_info')}>
-              <div className="icon-circle">
-                <i className="fas fa-hand-holding-heart"></i>
-              </div>
-              <h3>Donar</h3>
-              <p>Programa tu próxima donación</p>
+          <div className="col-md-4 col-sm-6 mb-4">
+            <div className="feature-card-new" onClick={() => MapsTo('donacion_info')}>
+              <img src={botonDonar} alt="Donar" className="feature-icon-img" />
+              <h3 className="feature-title">Donar</h3>
             </div>
           </div>
           
-          <div className="col-md-4 mb-4">
-            <div className="feature-card" onClick={() => MapsTo('mapa')}>
-              <div className="icon-circle">
-                <i className="fas fa-map-marked-alt"></i>
-              </div>
-              <h3>Mapa</h3>
-              <p>Centros de donación cercanos</p>
+          <div className="col-md-4 col-sm-6 mb-4">
+            <div className="feature-card-new" onClick={() => MapsTo('mapa')}>
+              <img src={botonMapa} alt="Mapa" className="feature-icon-img" />
+              <h3 className="feature-title">Mapa</h3>
             </div>
           </div>
           
-          <div className="col-md-4 mb-4">
-            <div className="feature-card" onClick={() => MapsTo('donaciones_history')}>
-              <div className="icon-circle">
-                <i className="fas fa-history"></i>
-              </div>
-              <h3>Tus Donaciones</h3>
-              <p>Revisa tu historial</p>
+          <div className="col-md-4 col-sm-6 mb-4">
+            <div className="feature-card-new" onClick={() => MapsTo('donaciones_history')}>
+              <img src={botonEstado} alt="Estado como donador" className="feature-icon-img" />
+              <h3 className="feature-title">Estado como donador</h3>
             </div>
           </div>
         </div>
         
-        <a href="#" className="info-link">
-          ¿Qué necesito saber para donar?
-          <i className="fas fa-arrow-right"></i>
-        </a>
+        <div className="info-section mt-5">
+          <h2 className="info-title">¿Qué necesito saber para donar?</h2>
+          <div className="row justify-content-center mt-4">
+            <div className="col-md-3 col-sm-6 mb-4 text-center">
+              <img src={icono4} alt="Conciencia" className="info-icon-img" />
+            </div>
+            <div className="col-md-3 col-sm-6 mb-4 text-center">
+              <img src={icono3} alt="Donación" className="info-icon-img" />
+            </div>
+            <div className="col-md-3 col-sm-6 mb-4 text-center">
+              <img src={icono2} alt="Proceso" className="info-icon-img" />
+            </div>
+            <div className="col-md-3 col-sm-6 mb-4 text-center">
+              <img src={icono1} alt="Inyección" className="info-icon-img" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
