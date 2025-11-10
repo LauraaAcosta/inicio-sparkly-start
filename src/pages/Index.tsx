@@ -1,13 +1,9 @@
 import { Heart, Map, Activity } from "lucide-react";
 import Header from "@/components/Header";
 import ActionCard from "@/components/ActionCard";
-import DonationDialog from "@/components/DonationDialog";
 import { toast } from "sonner";
-import { useState } from "react";
 
 const Index = () => {
-  const [donationDialogOpen, setDonationDialogOpen] = useState(false);
-
   const handleDonar = () => {
     toast.success("Redirigiendo a donación de sangre...");
   };
@@ -17,7 +13,7 @@ const Index = () => {
   };
 
   const handleEstado = () => {
-    setDonationDialogOpen(true);
+    toast.success("Verificando estado de salud...");
   };
 
   return (
@@ -44,15 +40,10 @@ const Index = () => {
           
           <ActionCard
             icon={Activity}
-            title="Tus donaciones"
+            title="Estado como"
             onClick={handleEstado}
           />
         </div>
-
-        <DonationDialog 
-          open={donationDialogOpen} 
-          onOpenChange={setDonationDialogOpen}
-        />
 
         {/* Información sobre donación de sangre */}
         <section className="mt-24 max-w-6xl mx-auto">
