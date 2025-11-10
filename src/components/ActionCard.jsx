@@ -1,0 +1,20 @@
+import { cn } from "@/lib/utils";
+
+const ActionCard = ({ icon: Icon, title, onClick, className }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "flex flex-col items-center gap-4 p-8 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-accent/30",
+        className
+      )}
+    >
+      <div className="w-32 h-32 rounded-full bg-secondary border-4 border-foreground/80 flex items-center justify-center shadow-lg">
+        <Icon className="w-16 h-16 text-accent" strokeWidth={2.5} />
+      </div>
+      <h3 className="text-xl font-bold text-accent">{title}</h3>
+    </button>
+  );
+};
+
+export default ActionCard;

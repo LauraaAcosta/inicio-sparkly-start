@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <header className="bg-primary py-4 px-6 shadow-lg">
       <nav className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Heart className="w-12 h-12 text-white fill-accent" />
-          <h1 className="text-3xl font-bold text-white">
+        <div className="flex items-center gap-2">
+          <Heart className="w-8 h-8 text-white fill-accent" />
+          <h1 className="text-2xl font-bold text-white">
             Hemo<span className="text-secondary">App</span>
           </h1>
         </div>
